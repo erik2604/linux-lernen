@@ -23,7 +23,7 @@ jobs:
         run: uname -a
 
       - name: Was ist mein Name?
-        run: echo "Mein Name ist" whoami
+        run: echo "Mein Name ist Erik"
 
       - name: Was ist die aktuelles Datum?
         run: date +%Y-%m-%d
