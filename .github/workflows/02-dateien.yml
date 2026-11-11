@@ -32,8 +32,16 @@ jobs:
         run: |
           cp daten/einkauf.txt arbeit/kopie.txt
           mv arbeit/kopie.txt arbeit/liste.txt
-          ls arbeit
+         
+          mkdir -p backup
+          cp daten/einkauf.txt backup/einkauf.txt
+          ls backup
 
+          echo "Butter" >> arbeit/liste.txt
+          cat arbeit/liste.txt
+
+          ls arbeit
+          
       - name: Temporäre Datei löschen
         run: |
           rm arbeit/notizen.txt
@@ -43,6 +51,6 @@ jobs:
       - name: Wiederholtes mkdir ohne -p testen
         continue-on-error: true
         run: |
-          mkdir testordner
-          mkdir testordner
+          mkdir -p testordner-p
+          mkdir -p testordner-p
           echo "Dieser Befehl wird nach dem Fehler nicht ausgeführt"
